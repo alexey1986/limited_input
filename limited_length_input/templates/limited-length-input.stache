@@ -1,0 +1,18 @@
+<div class="{{customclass}}
+    {{#if disabled}}disabled{{/if}}
+    {{#is state 'STATE_EMPTY'}}{{emptyClass}}{{/is}}
+    {{#is state 'STATE_SAFE'}}{{safeClass}}{{/is}}
+    {{#is state 'STATE_WARN'}}{{warningClass}}{{/is}}">
+    <textarea
+        placeholder="{{placeholder}}"
+        can-focus="{textAreaFocusInHandler}"
+        can-blur="{textAreaFocusOutHandler}"
+        can-input="{textareaHandler @element @element.val}"
+        value="{{message}}"
+        {{#if disabled}}disabled{{/if}}></textarea>
+    {{#if isEditing}}
+    <div class="{{counterClass}} {{#is state 'STATE_EMPTY'}}{{emptyCountClass}}{{/is}}
+        {{#is state 'STATE_SAFE'}}{{safeCountClass}}{{/is}}
+        {{#is state 'STATE_WARN'}}{{warningCountClass}}{{/is}}">{{countLength}}</div>
+    {{/if}}
+</div>

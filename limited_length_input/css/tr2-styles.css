@@ -1,0 +1,2406 @@
+/**
+ * The application main stylesheet:
+ *
+ * Listed files will be merged into t_static/clients/{client}/css/tr2-styles.css
+ * Use this section to add base styles to the application.
+ *
+ * NOTE: DO NOT ADD HERE STYLESHEETS THAT SHOULDN'T BE USED FOR EACH PAGE IN THE
+ * APPLICATION! TR2-STYLES INCLUDED FOR EACH PAGE IN THE PROJECT. IF YOU WORK ON
+ * SPECIFIC FUNCTIONALITY MAKE SEPARATE LAYOUT FILES AND INCLUDE THEM ONLY FOR YOUR
+ * PAGES.
+ */
+/**
+ * Globoforce variables:
+ *
+ * This file will be processed by config-app (css-generator) to set properties
+ * from db.
+ * This is pattern for _variables.scss.
+ */
+/*****************
+ * Global settings
+ */
+/**
+ * Client reasons variables.
+ * Use 'property or NULL' to keep valid property/style numbers into CSS.
+ * There is a case when config-app user can add property with number 23 but don't have numbers 20, 21, 22.
+ */
+/****************
+ * Color swatches
+ */
+/**
+ * States
+ */
+/************
+ * Dimensions
+ */
+/************
+ * Typography
+ */
+/************
+ * Components
+ */
+/**
+ * Buttons
+ */
+/**
+ * Links
+ */
+/**
+ * Alerts
+ */
+/**
+ * Mixins:
+ *
+ * Reusable functions for the application
+ */
+/**
+ * MIXIN: Directional-property
+ *
+ * directional-property mixins are shorthands for writing properties
+ * like the following:
+ *
+ * @include margin(null 0 10px);
+ * ------ compiles to:
+ * margin-right: 0;
+ * margin-bottom: 10px;
+ * margin-left: 0;
+ *
+ *
+ * @include border-style(dotted null);
+ * ------ compiles to:
+ * border-top-style: dotted;
+ * border-bottom-style: dotted;
+ *
+ * You can also use false instead of null
+ */
+/**
+ * MIXIN: Inline-block
+ *
+ * The inline-block mixin provides support for the inline-block property in IE7.
+ *
+ * @include inline-block;
+ */
+/**
+ * MIXIN: Font-face
+ *
+ * Mixin allowing easier custom fonts integration
+ *
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Regular');
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Bold', bold);
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Italic', normal, italic);
+ */
+/**
+ * MIXIN: Triangle
+ *
+ * Creates a visual triangle. Mixin takes ($size, $color, $direction)
+ * The $size argument can take one or two values—width height.
+ *
+ * @include triangle(10px, black, left);
+ * @include triangle(10px 5px, black white, up-right);
+ */
+/**
+ * Typography
+ *
+ * Global typography styles
+ */
+/**
+ * Default font family
+ */
+/* line 15, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.default-font {
+  font-family: Arial, Verdana, sans-serif, Times New Roman; }
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  src: url("/t_static/global/fonts/roboto/Roboto-Regular.eot");
+  src: url("/t_static/global/fonts/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("/t_static/global/fonts/roboto/Roboto-Regular.woff") format("woff"), url("/t_static/global/fonts/roboto/Roboto-Regular.ttf") format("truetype"), url("/t_static/global/fonts/roboto/Roboto-Regular.svg#Roboto") format("svg"); }
+
+@font-face {
+  font-family: Roboto-Bold;
+  font-weight: 700;
+  font-style: normal;
+  src: url("/t_static/global/fonts/roboto/Roboto-Bold.eot");
+  src: url("/t_static/global/fonts/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/t_static/global/fonts/roboto/Roboto-Bold.woff") format("woff"), url("/t_static/global/fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("/t_static/global/fonts/roboto/Roboto-Bold.svg#Roboto-Bold") format("svg"); }
+
+@font-face {
+  font-family: Roboto-Light;
+  font-weight: 100;
+  font-style: normal;
+  src: url("/t_static/global/fonts/roboto/Roboto-Light.eot");
+  src: url("/t_static/global/fonts/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/t_static/global/fonts/roboto/Roboto-Light.woff") format("woff"), url("/t_static/global/fonts/roboto/Roboto-Light.ttf") format("truetype"), url("/t_static/global/fonts/roboto/Roboto-Light.svg#Roboto-Light") format("svg"); }
+
+/**
+ * Font sizes
+ */
+/* line 28, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-xx-larger {
+  font-size: 2em; }
+
+/* line 29, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-x-larger {
+  font-size: 1.5em; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-larger {
+  font-size: 1.15em; }
+
+/* line 31, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-smaller {
+  font-size: 0.85em; }
+
+/* line 32, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.font-size-base {
+  font-size: 13px; }
+
+/**
+ * Text states
+ */
+/* line 37, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-muted {
+  color: #9e9e9e; }
+
+/**
+ * Text alignment
+ */
+/* line 45, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+html[dir='ltr'] .text-left {
+  text-align: left; }
+/* line 49, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+html[dir='rtl'] .text-left {
+  text-align: right; }
+
+/* line 56, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+html[dir='ltr'] .text-right {
+  text-align: right; }
+/* line 60, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+html[dir='rtl'] .text-right {
+  text-align: left; }
+
+/* line 67, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-center {
+  text-align: center; }
+
+/* line 68, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-justify {
+  text-align: justify; }
+
+/* line 69, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-nowrap {
+  white-space: nowrap; }
+
+/**
+ * Text transformations
+ */
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-lowercase {
+  text-transform: lowercase; }
+
+/* line 76, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-uppercase {
+  text-transform: uppercase; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-capitalize {
+  text-transform: capitalize; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.no-text-transform {
+  text-transform: none; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-bold, .custom-font.text-bold, .custom-font .text-bold {
+  font-weight: 700; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-normal, .custom-font.text-normal, .custom-font .text-normal {
+  font-weight: 400; }
+
+/* line 82, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-light, .custom-font.text-light, .custom-font .text-light {
+  font-weight: 100; }
+
+/* line 84, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.text-italic {
+  font-style: italic; }
+
+/**
+ * Lists
+ */
+/* line 92, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.list {
+  margin-top: 0;
+  margin-bottom: 9px; }
+  /* line 96, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+  .list ul,
+  .list ol {
+    margin-bottom: 0; }
+
+/* line 102, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.list-marked {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 0; }
+
+/* line 109, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.list-unstyled {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  list-style: none; }
+
+/**
+ * Custom font
+ */
+/* line 139, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+.custom-font {
+  font-family: Roboto, Arial, Verdana, Helvetica, sans-serif; }
+  /* line 141, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+  .custom-font.text-normal, .custom-font .text-normal {
+    font-family: Roboto, Arial, Verdana, Helvetica, sans-serif; }
+  /* line 145, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+  .custom-font.text-bold, .custom-font .text-bold {
+    font-family: Roboto-Bold, Arial, Verdana, Helvetica, sans-serif; }
+  /* line 149, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_type.scss */
+  .custom-font.text-light, .custom-font .text-light {
+    font-family: Roboto-Light, Arial, Verdana, Helvetica, sans-serif; }
+
+/**
+ * Forms
+ *
+ */
+/* line 15, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold; }
+
+/* line 23, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.radio input[type="radio"] {
+  margin: 2px 0 0;
+  margin-top: 1px \9;
+  line-height: normal; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.radio {
+  position: relative;
+  display: block;
+  min-height: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  /* line 40, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+  .radio label {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer; }
+
+/* line 47, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.radio input[type="radio"] {
+  position: absolute;
+  margin-top: 0px \9; }
+
+/* line 52, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.radio + .radio {
+  margin-top: -5px; }
+
+/* line 56, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+.checkbox {
+  position: relative;
+  display: block;
+  min-height: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  /* line 63, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+  .checkbox label {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer; }
+  /* line 70, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+  .checkbox input[type=checkbox] {
+    position: absolute;
+    margin-top: 4px\9;
+    margin-left: -20px;
+    padding: 0; }
+
+/* line 86, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_forms.scss */
+input[type="radio"][disabled], input[type="radio"][disabled] + label,
+input[type="checkbox"][disabled],
+input[type="checkbox"][disabled] + label {
+  cursor: default; }
+
+/* line 4, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+button:focus {
+  outline: none; }
+
+/* line 7, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+button::-moz-focus-inner {
+  border: 0; }
+
+/* line 10, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+:focus {
+  outline: none !important; }
+
+/* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.gf-btn, .yui-skin-sam .buttonStyle1 .yui-button button,
+.yui-skin-sam .buttonStyle2 .yui-button button,
+.yui-skin-sam .buttonOutlined .yui-button button,
+.yui-skin-sam .buttonStyle1 .yui-button a,
+.yui-skin-sam .buttonStyle2 .yui-button a,
+.yui-skin-sam .buttonOutlined .yui-button a,
+.yui-skin-sam .buttonStyle1 input,
+.yui-skin-sam .buttonStyle2 input,
+.yui-skin-sam .buttonOutlined input {
+  margin: 0;
+  font-family: Roboto, Arial, Verdana, Helvetica, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  min-width: 80px;
+  padding: 8px 16px;
+  font-size: 13px;
+  line-height: 1.42857;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  vertical-align: middle;
+  *zoom: 1;
+  *display: inline;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+  /* line 38, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .gf-btn:focus, .yui-skin-sam .buttonStyle1 .yui-button button:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button:focus,
+  .yui-skin-sam .buttonOutlined .yui-button button:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a:focus,
+  .yui-skin-sam .buttonStyle1 input:focus,
+  .yui-skin-sam .buttonStyle2 input:focus,
+  .yui-skin-sam .buttonOutlined input:focus, .gf-btn:active:focus, .yui-skin-sam .buttonStyle1 .yui-button button:active:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button:active:focus,
+  .yui-skin-sam .buttonOutlined .yui-button button:active:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a:active:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a:active:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a:active:focus,
+  .yui-skin-sam .buttonStyle1 input:active:focus,
+  .yui-skin-sam .buttonStyle2 input:active:focus,
+  .yui-skin-sam .buttonOutlined input:active:focus, .gf-btn.active:focus, .yui-skin-sam .buttonStyle1 .yui-button button.active:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button.active:focus,
+  .yui-skin-sam .buttonOutlined .yui-button button.active:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a.active:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a.active:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a.active:focus,
+  .yui-skin-sam .buttonStyle1 input.active:focus,
+  .yui-skin-sam .buttonStyle2 input.active:focus,
+  .yui-skin-sam .buttonOutlined input.active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  /* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .gf-btn:hover, .yui-skin-sam .buttonStyle1 .yui-button button:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button button:hover,
+  .yui-skin-sam .buttonOutlined .yui-button button:hover,
+  .yui-skin-sam .buttonStyle1 .yui-button a:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button a:hover,
+  .yui-skin-sam .buttonOutlined .yui-button a:hover,
+  .yui-skin-sam .buttonStyle1 input:hover,
+  .yui-skin-sam .buttonStyle2 input:hover,
+  .yui-skin-sam .buttonOutlined input:hover, .gf-btn:focus, .yui-skin-sam .buttonStyle1 .yui-button button:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button:focus,
+  .yui-skin-sam .buttonOutlined .yui-button button:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a:focus,
+  .yui-skin-sam .buttonStyle1 input:focus,
+  .yui-skin-sam .buttonStyle2 input:focus,
+  .yui-skin-sam .buttonOutlined input:focus {
+    color: #212121;
+    text-decoration: none; }
+  /* line 50, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .gf-btn:active, .yui-skin-sam .buttonStyle1 .yui-button button:active,
+  .yui-skin-sam .buttonStyle2 .yui-button button:active,
+  .yui-skin-sam .buttonOutlined .yui-button button:active,
+  .yui-skin-sam .buttonStyle1 .yui-button a:active,
+  .yui-skin-sam .buttonStyle2 .yui-button a:active,
+  .yui-skin-sam .buttonOutlined .yui-button a:active,
+  .yui-skin-sam .buttonStyle1 input:active,
+  .yui-skin-sam .buttonStyle2 input:active,
+  .yui-skin-sam .buttonOutlined input:active, .gf-btn.active, .yui-skin-sam .buttonStyle1 .yui-button button.active,
+  .yui-skin-sam .buttonStyle2 .yui-button button.active,
+  .yui-skin-sam .buttonOutlined .yui-button button.active,
+  .yui-skin-sam .buttonStyle1 .yui-button a.active,
+  .yui-skin-sam .buttonStyle2 .yui-button a.active,
+  .yui-skin-sam .buttonOutlined .yui-button a.active,
+  .yui-skin-sam .buttonStyle1 input.active,
+  .yui-skin-sam .buttonStyle2 input.active,
+  .yui-skin-sam .buttonOutlined input.active {
+    outline: 0; }
+  /* line 56, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .gf-btn.disabled, .yui-skin-sam .buttonStyle1 .yui-button button.disabled,
+  .yui-skin-sam .buttonStyle2 .yui-button button.disabled,
+  .yui-skin-sam .buttonOutlined .yui-button button.disabled,
+  .yui-skin-sam .buttonStyle1 .yui-button a.disabled,
+  .yui-skin-sam .buttonStyle2 .yui-button a.disabled,
+  .yui-skin-sam .buttonOutlined .yui-button a.disabled,
+  .yui-skin-sam .buttonStyle1 input.disabled,
+  .yui-skin-sam .buttonStyle2 input.disabled,
+  .yui-skin-sam .buttonOutlined input.disabled, .gf-btn[disabled], .yui-skin-sam .buttonStyle1 .yui-button button[disabled],
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled],
+  .yui-skin-sam .buttonOutlined .yui-button button[disabled],
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled],
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled],
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled],
+  .yui-skin-sam .buttonStyle1 input[disabled],
+  .yui-skin-sam .buttonStyle2 input[disabled],
+  .yui-skin-sam .buttonOutlined input[disabled], fieldset[disabled] .gf-btn, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    box-shadow: none; }
+
+/* line 64, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-icon {
+  vertical-align: middle; }
+
+/* line 68, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-text {
+  vertical-align: middle; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-primary, .yui-skin-sam .buttonStyle1 .yui-button button,
+.yui-skin-sam .buttonStyle2 .yui-button button,
+.yui-skin-sam .buttonStyle1 .yui-button a,
+.yui-skin-sam .buttonStyle2 .yui-button a,
+.yui-skin-sam .buttonStyle1 input,
+.yui-skin-sam .buttonStyle2 input {
+  color: white;
+  background-color: #666666;
+  border-color: #666666; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-primary:hover, .yui-skin-sam .buttonStyle1 .yui-button button:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button button:hover,
+  .yui-skin-sam .buttonStyle1 .yui-button a:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button a:hover,
+  .yui-skin-sam .buttonStyle1 input:hover,
+  .yui-skin-sam .buttonStyle2 input:hover, .btn-primary:focus, .yui-skin-sam .buttonStyle1 .yui-button button:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle1 input:focus,
+  .yui-skin-sam .buttonStyle2 input:focus, .btn-primary:active, .yui-skin-sam .buttonStyle1 .yui-button button:active,
+  .yui-skin-sam .buttonStyle2 .yui-button button:active,
+  .yui-skin-sam .buttonStyle1 .yui-button a:active,
+  .yui-skin-sam .buttonStyle2 .yui-button a:active,
+  .yui-skin-sam .buttonStyle1 input:active,
+  .yui-skin-sam .buttonStyle2 input:active, .btn-primary.ui-state-active, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle1 input.ui-state-active,
+  .yui-skin-sam .buttonStyle2 input.ui-state-active {
+    color: white;
+    background-color: #4d4d4d;
+    border-color: #474747;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-primary:active, .yui-skin-sam .buttonStyle1 .yui-button button:active,
+  .yui-skin-sam .buttonStyle2 .yui-button button:active,
+  .yui-skin-sam .buttonStyle1 .yui-button a:active,
+  .yui-skin-sam .buttonStyle2 .yui-button a:active,
+  .yui-skin-sam .buttonStyle1 input:active,
+  .yui-skin-sam .buttonStyle2 input:active, .btn-primary.ui-state-active, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle1 input.ui-state-active,
+  .yui-skin-sam .buttonStyle2 input.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-primary.ui-state-disabled, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-disabled,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-disabled,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-disabled,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-disabled,
+  .yui-skin-sam .buttonStyle1 input.ui-state-disabled,
+  .yui-skin-sam .buttonStyle2 input.ui-state-disabled, .btn-primary.ui-state-disabled:hover, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-disabled:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-disabled:hover,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-disabled:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-disabled:hover,
+  .yui-skin-sam .buttonStyle1 input.ui-state-disabled:hover,
+  .yui-skin-sam .buttonStyle2 input.ui-state-disabled:hover, .btn-primary.ui-state-disabled:focus, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-disabled:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-disabled:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-disabled:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-disabled:focus,
+  .yui-skin-sam .buttonStyle1 input.ui-state-disabled:focus,
+  .yui-skin-sam .buttonStyle2 input.ui-state-disabled:focus, .btn-primary.ui-state-disabled:active, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-disabled:active,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-disabled:active,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-disabled:active,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-disabled:active,
+  .yui-skin-sam .buttonStyle1 input.ui-state-disabled:active,
+  .yui-skin-sam .buttonStyle2 input.ui-state-disabled:active, .btn-primary.ui-state-disabled.ui-state-active, .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonStyle1 input.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonStyle2 input.ui-state-disabled.ui-state-active, .btn-primary[disabled], .yui-skin-sam .buttonStyle1 .yui-button button[disabled],
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled],
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled],
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled],
+  .yui-skin-sam .buttonStyle1 input[disabled],
+  .yui-skin-sam .buttonStyle2 input[disabled], .btn-primary[disabled]:hover, .yui-skin-sam .buttonStyle1 .yui-button button[disabled]:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled]:hover,
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled]:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled]:hover,
+  .yui-skin-sam .buttonStyle1 input[disabled]:hover,
+  .yui-skin-sam .buttonStyle2 input[disabled]:hover, .btn-primary[disabled]:focus, .yui-skin-sam .buttonStyle1 .yui-button button[disabled]:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled]:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled]:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled]:focus,
+  .yui-skin-sam .buttonStyle1 input[disabled]:focus,
+  .yui-skin-sam .buttonStyle2 input[disabled]:focus, .btn-primary[disabled]:active, .yui-skin-sam .buttonStyle1 .yui-button button[disabled]:active,
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled]:active,
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled]:active,
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled]:active,
+  .yui-skin-sam .buttonStyle1 input[disabled]:active,
+  .yui-skin-sam .buttonStyle2 input[disabled]:active, .btn-primary[disabled].ui-state-active, .yui-skin-sam .buttonStyle1 .yui-button button[disabled].ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button button[disabled].ui-state-active,
+  .yui-skin-sam .buttonStyle1 .yui-button a[disabled].ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button a[disabled].ui-state-active,
+  .yui-skin-sam .buttonStyle1 input[disabled].ui-state-active,
+  .yui-skin-sam .buttonStyle2 input[disabled].ui-state-active, fieldset[disabled] .btn-primary, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button:hover, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button:hover,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button:hover,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a:hover,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a:hover,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a:hover,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a:hover,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input:hover,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input:hover,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input:hover,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button:focus, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button:focus,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button:focus,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a:focus,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a:focus,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a:focus,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input:focus,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input:focus,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input:focus,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button:active, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button:active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button:active,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button:active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a:active,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a:active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a:active,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a:active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input:active,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input:active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input:active,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input:active, fieldset[disabled] .btn-primary.ui-state-active, fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button button.ui-state-active, .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] button.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] button.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle1 .yui-button fieldset[disabled] a.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonStyle2 .yui-button fieldset[disabled] a.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle1 input.ui-state-active,
+  .yui-skin-sam .buttonStyle1 fieldset[disabled] input.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonStyle2 input.ui-state-active,
+  .yui-skin-sam .buttonStyle2 fieldset[disabled] input.ui-state-active {
+    background-color: #666666;
+    border-color: #666666; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-secondary {
+  color: #212121;
+  background-color: #f8f8f8;
+  border-color: #eeeeee; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.ui-state-active {
+    color: #212121;
+    background-color: #dfdfdf;
+    border-color: #cfcfcf;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-secondary:active, .btn-secondary.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-secondary.ui-state-disabled, .btn-secondary.ui-state-disabled:hover, .btn-secondary.ui-state-disabled:focus, .btn-secondary.ui-state-disabled:active, .btn-secondary.ui-state-disabled.ui-state-active, .btn-secondary[disabled], .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus, .btn-secondary[disabled]:active, .btn-secondary[disabled].ui-state-active, fieldset[disabled] .btn-secondary, fieldset[disabled] .btn-secondary:hover, fieldset[disabled] .btn-secondary:focus, fieldset[disabled] .btn-secondary:active, fieldset[disabled] .btn-secondary.ui-state-active {
+    background-color: #f8f8f8;
+    border-color: #eeeeee; }
+
+/* line 83, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-outline, .yui-skin-sam .buttonOutlined .yui-button button,
+.yui-skin-sam .buttonOutlined .yui-button a,
+.yui-skin-sam .buttonOutlined input {
+  color: #666666;
+  background: transparent;
+  border-color: #666666; }
+  /* line 47, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-outline:hover, .yui-skin-sam .buttonOutlined .yui-button button:hover,
+  .yui-skin-sam .buttonOutlined .yui-button a:hover,
+  .yui-skin-sam .buttonOutlined input:hover, .btn-outline:focus, .yui-skin-sam .buttonOutlined .yui-button button:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a:focus,
+  .yui-skin-sam .buttonOutlined input:focus, .btn-outline:active, .yui-skin-sam .buttonOutlined .yui-button button:active,
+  .yui-skin-sam .buttonOutlined .yui-button a:active,
+  .yui-skin-sam .buttonOutlined input:active, .btn-outline.ui-state-active, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonOutlined input.ui-state-active {
+    color: white;
+    background-color: #4d4d4d;
+    border-color: #4d4d4d;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 55, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-outline:active, .yui-skin-sam .buttonOutlined .yui-button button:active,
+  .yui-skin-sam .buttonOutlined .yui-button a:active,
+  .yui-skin-sam .buttonOutlined input:active, .btn-outline.ui-state-active, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-active,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonOutlined input.ui-state-active {
+    background-image: none; }
+  /* line 65, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-outline.ui-state-disabled, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-disabled,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-disabled,
+  .yui-skin-sam .buttonOutlined input.ui-state-disabled, .btn-outline.ui-state-disabled:hover, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-disabled:hover,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-disabled:hover,
+  .yui-skin-sam .buttonOutlined input.ui-state-disabled:hover, .btn-outline.ui-state-disabled:focus, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-disabled:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-disabled:focus,
+  .yui-skin-sam .buttonOutlined input.ui-state-disabled:focus, .btn-outline.ui-state-disabled:active, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-disabled:active,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-disabled:active,
+  .yui-skin-sam .buttonOutlined input.ui-state-disabled:active, .btn-outline.ui-state-disabled.ui-state-active, .yui-skin-sam .buttonOutlined .yui-button button.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonOutlined .yui-button a.ui-state-disabled.ui-state-active,
+  .yui-skin-sam .buttonOutlined input.ui-state-disabled.ui-state-active, .btn-outline[disabled], .yui-skin-sam .buttonOutlined .yui-button button[disabled],
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled],
+  .yui-skin-sam .buttonOutlined input[disabled], .btn-outline[disabled]:hover, .yui-skin-sam .buttonOutlined .yui-button button[disabled]:hover,
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled]:hover,
+  .yui-skin-sam .buttonOutlined input[disabled]:hover, .btn-outline[disabled]:focus, .yui-skin-sam .buttonOutlined .yui-button button[disabled]:focus,
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled]:focus,
+  .yui-skin-sam .buttonOutlined input[disabled]:focus, .btn-outline[disabled]:active, .yui-skin-sam .buttonOutlined .yui-button button[disabled]:active,
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled]:active,
+  .yui-skin-sam .buttonOutlined input[disabled]:active, .btn-outline[disabled].ui-state-active, .yui-skin-sam .buttonOutlined .yui-button button[disabled].ui-state-active,
+  .yui-skin-sam .buttonOutlined .yui-button a[disabled].ui-state-active,
+  .yui-skin-sam .buttonOutlined input[disabled].ui-state-active, fieldset[disabled] .btn-outline, fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button, .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input, fieldset[disabled] .btn-outline:hover, fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button:hover, .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button:hover,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a:hover,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a:hover,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input:hover,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input:hover, fieldset[disabled] .btn-outline:focus, fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button:focus, .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button:focus,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a:focus,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a:focus,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input:focus,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input:focus, fieldset[disabled] .btn-outline:active, fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button:active, .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button:active,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a:active,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a:active,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input:active,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input:active, fieldset[disabled] .btn-outline.ui-state-active, fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button button.ui-state-active, .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] button.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined .yui-button a.ui-state-active,
+  .yui-skin-sam .buttonOutlined .yui-button fieldset[disabled] a.ui-state-active,
+  fieldset[disabled] .yui-skin-sam .buttonOutlined input.ui-state-active,
+  .yui-skin-sam .buttonOutlined fieldset[disabled] input.ui-state-active {
+    background: transparent;
+    border-color: #666666; }
+
+/* line 88, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-success {
+  color: white;
+  background-color: #468546;
+  border-color: #468546; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.ui-state-active {
+    color: white;
+    background-color: #346434;
+    border-color: #315d31;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-success:active, .btn-success.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-success.ui-state-disabled, .btn-success.ui-state-disabled:hover, .btn-success.ui-state-disabled:focus, .btn-success.ui-state-disabled:active, .btn-success.ui-state-disabled.ui-state-active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].ui-state-active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.ui-state-active {
+    background-color: #468546;
+    border-color: #468546; }
+
+/* line 93, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-danger {
+  color: white;
+  background-color: #993a43;
+  border-color: #993a43; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.ui-state-active {
+    color: white;
+    background-color: #742c33;
+    border-color: #6d2930;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-danger:active, .btn-danger.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-danger.ui-state-disabled, .btn-danger.ui-state-disabled:hover, .btn-danger.ui-state-disabled:focus, .btn-danger.ui-state-disabled:active, .btn-danger.ui-state-disabled.ui-state-active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].ui-state-active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.ui-state-active {
+    background-color: #993a43;
+    border-color: #993a43; }
+
+/* line 106, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-link {
+  color: #666666;
+  font-weight: normal;
+  border-radius: 0; }
+  /* line 115, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled], fieldset[disabled] .btn-link {
+    background-color: transparent; }
+  /* line 121, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+    border-color: transparent; }
+  /* line 125, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .btn-link:hover, .btn-link:focus {
+    text-decoration: underline;
+    background-color: transparent; }
+  /* line 132, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+  .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
+    text-decoration: none; }
+
+/* line 142, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-block {
+  display: block;
+  width: 100%; }
+
+/* line 148, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+.btn-block + .btn-block {
+  margin-top: 5px; }
+
+/* line 156, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_buttons.scss */
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  width: 100%; }
+
+/**
+ * Images
+ *
+ * Global image styles
+ */
+/**
+ * Userpic
+ */
+/* line 10, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.userpic {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%; }
+
+/* line 18, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon, .ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  *zoom: 1;
+  *display: inline;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat; }
+
+/* line 28, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-ajax-loading {
+  display: inline-block;
+  vertical-align: middle;
+  *zoom: 1;
+  *display: inline;
+  width: 64px;
+  height: 8px;
+  background-image: url(/t_static/global/images/tr2-images/ajaxloading.gif?1490936512367); }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-calendar {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_calendar.png?1490936512367); }
+
+/* line 37, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-email {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_email.png?1490936512367); }
+
+/* line 38, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-globe {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_globe.png?1490936512367); }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-lock {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_lock.png?1490936512367); }
+
+/* line 40, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-share {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_share.png?1490936512367); }
+
+/* line 41, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-print {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_print.png?1490936512367); }
+
+/* line 42, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-caret {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_caret.png?1490936512367); }
+
+/* line 43, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-restricted {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_restricted.png?1490936512367); }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_images.scss */
+.gf-icon-cross {
+  background-image: url(/t_static/global/images/tr2-images/icons/icon_close.png?1490936512367); }
+
+/**
+ * Utilities
+ *
+ * Collect here some reusable classes
+ */
+/**
+ * Position
+ */
+/* line 11, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.position-absolute {
+  position: absolute; }
+
+/* line 12, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.position-relative {
+  position: relative; }
+
+/**
+ * Display
+ */
+/* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.hide {
+  display: none; }
+
+/* line 25, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+  *zoom: 1;
+  *display: inline; }
+
+/* line 26, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.full-width {
+  box-sizing: border-box;
+  width: 100%; }
+
+/**
+ * Alignment
+ */
+/* line 35, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.align-middle {
+  vertical-align: middle; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.align-top {
+  vertical-align: top; }
+
+/**
+ * Floats
+ */
+/* line 42, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+html[dir='ltr'] .pull-right {
+  float: right; }
+/* line 46, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+html[dir='rtl'] .pull-right {
+  float: left; }
+
+/* line 52, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+html[dir='ltr'] .pull-left {
+  float: left; }
+/* line 56, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+html[dir='rtl'] .pull-left {
+  float: right; }
+
+/* line 61, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.clear-both {
+  clear: both; }
+
+/**
+ * Generate margins and padding up to 30px
+ */
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-5 {
+  margin: 5px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-5 {
+  margin-top: 5px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-5 {
+  margin-left: 5px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-5 {
+  margin-right: 5px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-5 {
+  margin-bottom: 5px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-5 {
+  padding: 5px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-5 {
+  padding-top: 5px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-5 {
+  padding-left: 5px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-5 {
+  padding-right: 5px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-5 {
+  padding-bottom: 5px; }
+
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-10 {
+  margin: 10px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-10 {
+  margin-top: 10px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-10 {
+  margin-left: 10px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-10 {
+  margin-right: 10px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-10 {
+  margin-bottom: 10px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-10 {
+  padding: 10px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-10 {
+  padding-top: 10px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-10 {
+  padding-left: 10px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-10 {
+  padding-right: 10px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-10 {
+  padding-bottom: 10px; }
+
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-15 {
+  margin: 15px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-15 {
+  margin-top: 15px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-15 {
+  margin-left: 15px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-15 {
+  margin-right: 15px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-15 {
+  margin-bottom: 15px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-15 {
+  padding: 15px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-15 {
+  padding-top: 15px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-15 {
+  padding-left: 15px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-15 {
+  padding-right: 15px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-15 {
+  padding-bottom: 15px; }
+
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-20 {
+  margin: 20px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-20 {
+  margin-top: 20px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-20 {
+  margin-left: 20px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-20 {
+  margin-right: 20px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-20 {
+  margin-bottom: 20px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-20 {
+  padding: 20px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-20 {
+  padding-top: 20px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-20 {
+  padding-left: 20px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-20 {
+  padding-right: 20px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-20 {
+  padding-bottom: 20px; }
+
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-25 {
+  margin: 25px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-25 {
+  margin-top: 25px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-25 {
+  margin-left: 25px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-25 {
+  margin-right: 25px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-25 {
+  margin-bottom: 25px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-25 {
+  padding: 25px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-25 {
+  padding-top: 25px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-25 {
+  padding-left: 25px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-25 {
+  padding-right: 25px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-25 {
+  padding-bottom: 25px; }
+
+/* line 71, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-30 {
+  margin: 30px; }
+
+/* line 72, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-top-30 {
+  margin-top: 30px !important; }
+
+/* line 73, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-left-30 {
+  margin-left: 30px; }
+
+/* line 74, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-right-30 {
+  margin-right: 30px; }
+
+/* line 75, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-bottom-30 {
+  margin-bottom: 30px; }
+
+/* line 77, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-30 {
+  padding: 30px; }
+
+/* line 78, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-top-30 {
+  padding-top: 30px; }
+
+/* line 79, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-left-30 {
+  padding-left: 30px; }
+
+/* line 80, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-right-30 {
+  padding-right: 30px; }
+
+/* line 81, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.padding-bottom-30 {
+  padding-bottom: 30px; }
+
+/* line 84, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-margin {
+  margin: 0; }
+
+/* line 85, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-margin-top {
+  margin-top: 0; }
+
+/* line 86, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-margin-bottom {
+  margin-bottom: 0; }
+
+/* line 87, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-margin-top-bottom {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* line 88, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-margin-left-right {
+  margin-left: 0;
+  margin-right: 0; }
+
+/* line 89, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 91, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-padding {
+  padding: 0; }
+
+/* line 92, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-padding-top {
+  padding-top: 0 !important; }
+
+/* line 93, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-padding-bottom {
+  padding-bottom: 0 !important; }
+
+/**
+ * Borders
+ */
+/* line 98, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.no-outline {
+  outline: none; }
+
+/* line 101, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.border-radius-all {
+  border-radius: 4px; }
+
+/* line 102, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.border-radius-top-left {
+  border-top-left-radius: 4px; }
+
+/* line 103, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.border-radius-top-right {
+  border-top-right-radius: 4px; }
+
+/* line 104, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.border-radius-bottom-left {
+  border-bottom-left-radius: 4px; }
+
+/* line 105, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.border-radius-bottom-right {
+  border-bottom-right-radius: 4px; }
+
+/**
+ * Clearfix
+ */
+/* line 116, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.clearfix {
+  *zoom: 1; }
+  /* line 119, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+  .clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  /* line 126, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+  .clearfix:after {
+    clear: both; }
+
+/* line 133, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.cursor-pointer {
+  cursor: pointer; }
+
+/* line 136, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_utilities.scss */
+.ellipsis {
+  white-space: nowrap;
+  word-wrap: normal !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis; }
+
+/* line 9, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+.alert {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 3px; }
+  /* line 15, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+  .alert h4 {
+    margin-top: 0;
+    color: inherit; }
+  /* line 21, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+  .alert .alert-link {
+    font-weight: bold; }
+  /* line 27, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+  .alert > p,
+  .alert > ul {
+    margin-bottom: 0; }
+  /* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+  .alert > p + p {
+    margin-top: 5px; }
+
+/* line 40, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 30px; }
+  /* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+  .alert-dismissable .close,
+  .alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit; }
+
+/* line 56, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+.alert-danger {
+  background-color: #ede9e8;
+  border-color: #e2dada;
+  color: #a15360; }
+  /* line 7, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alert-danger hr {
+    border-top-color: #d7cccb; }
+  /* line 10, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alert-danger .alert-link {
+    color: #7f424c;
+    font-weight: 500; }
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alert-danger p {
+    margin: 0; }
+
+/* line 60, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_alerts.scss */
+.alertNote {
+  background-color: whitesmoke;
+  border-color: #e0e0e0;
+  color: #424242; }
+  /* line 7, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alertNote hr {
+    border-top-color: lightgrey; }
+  /* line 10, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alertNote .alert-link {
+    color: #424242;
+    font-weight: bold; }
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/mixins/_alerts.scss */
+  .alertNote p {
+    margin: 0; }
+
+/**
+ * Mixins:
+ *
+ * Reusable functions for the application
+ */
+/**
+ * MIXIN: Directional-property
+ *
+ * directional-property mixins are shorthands for writing properties
+ * like the following:
+ *
+ * @include margin(null 0 10px);
+ * ------ compiles to:
+ * margin-right: 0;
+ * margin-bottom: 10px;
+ * margin-left: 0;
+ *
+ *
+ * @include border-style(dotted null);
+ * ------ compiles to:
+ * border-top-style: dotted;
+ * border-bottom-style: dotted;
+ *
+ * You can also use false instead of null
+ */
+/**
+ * MIXIN: Inline-block
+ *
+ * The inline-block mixin provides support for the inline-block property in IE7.
+ *
+ * @include inline-block;
+ */
+/**
+ * MIXIN: Font-face
+ *
+ * Mixin allowing easier custom fonts integration
+ *
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Regular');
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Bold', bold);
+ * @include font-face(SourceSansPro, '/fonts/Roboto/Roboto-Italic', normal, italic);
+ */
+/**
+ * MIXIN: Triangle
+ *
+ * Creates a visual triangle. Mixin takes ($size, $color, $direction)
+ * The $size argument can take one or two values—width height.
+ *
+ * @include triangle(10px, black, left);
+ * @include triangle(10px 5px, black white, up-right);
+ */
+/* line 9, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_def_bg_color {
+  background: #cccccc; }
+
+/* line 12, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_def_color {
+  color: #cccccc; }
+
+/* line 15, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_def_bg_color {
+  color: white;
+  background-color: #cccccc;
+  border-color: #cccccc; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_def_bg_color:hover, .btn-award_reason_def_bg_color:focus, .btn-award_reason_def_bg_color:active, .btn-award_reason_def_bg_color.ui-state-active {
+    color: white;
+    background-color: #b3b3b3;
+    border-color: #adadad;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_def_bg_color:active, .btn-award_reason_def_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_def_bg_color.ui-state-disabled, .btn-award_reason_def_bg_color.ui-state-disabled:hover, .btn-award_reason_def_bg_color.ui-state-disabled:focus, .btn-award_reason_def_bg_color.ui-state-disabled:active, .btn-award_reason_def_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_def_bg_color[disabled], .btn-award_reason_def_bg_color[disabled]:hover, .btn-award_reason_def_bg_color[disabled]:focus, .btn-award_reason_def_bg_color[disabled]:active, .btn-award_reason_def_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_def_bg_color, fieldset[disabled] .btn-award_reason_def_bg_color:hover, fieldset[disabled] .btn-award_reason_def_bg_color:focus, fieldset[disabled] .btn-award_reason_def_bg_color:active, fieldset[disabled] .btn-award_reason_def_bg_color.ui-state-active {
+    background-color: #cccccc;
+    border-color: #cccccc; }
+
+/* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_def_border_color {
+  border-color: #cccccc; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_1_bg_color {
+  background: #0096d5; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_1_bg_color {
+  color: white;
+  background-color: #0096d5;
+  border-color: #0096d5; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_1_bg_color:hover, .btn-award_reason_1_bg_color:focus, .btn-award_reason_1_bg_color:active, .btn-award_reason_1_bg_color.ui-state-active {
+    color: white;
+    background-color: #0072a2;
+    border-color: #006b98;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_1_bg_color:active, .btn-award_reason_1_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_1_bg_color.ui-state-disabled, .btn-award_reason_1_bg_color.ui-state-disabled:hover, .btn-award_reason_1_bg_color.ui-state-disabled:focus, .btn-award_reason_1_bg_color.ui-state-disabled:active, .btn-award_reason_1_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_1_bg_color[disabled], .btn-award_reason_1_bg_color[disabled]:hover, .btn-award_reason_1_bg_color[disabled]:focus, .btn-award_reason_1_bg_color[disabled]:active, .btn-award_reason_1_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_1_bg_color, fieldset[disabled] .btn-award_reason_1_bg_color:hover, fieldset[disabled] .btn-award_reason_1_bg_color:focus, fieldset[disabled] .btn-award_reason_1_bg_color:active, fieldset[disabled] .btn-award_reason_1_bg_color.ui-state-active {
+    background-color: #0096d5;
+    border-color: #0096d5; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_1_color {
+  color: #0096d5; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_1_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_1_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_1_border_color {
+  border-color: #0096d5; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_2_bg_color {
+  background: #e71b26; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_2_bg_color {
+  color: white;
+  background-color: #e71b26;
+  border-color: #e71b26; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_2_bg_color:hover, .btn-award_reason_2_bg_color:focus, .btn-award_reason_2_bg_color:active, .btn-award_reason_2_bg_color.ui-state-active {
+    color: white;
+    background-color: #bb141d;
+    border-color: #b2131b;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_2_bg_color:active, .btn-award_reason_2_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_2_bg_color.ui-state-disabled, .btn-award_reason_2_bg_color.ui-state-disabled:hover, .btn-award_reason_2_bg_color.ui-state-disabled:focus, .btn-award_reason_2_bg_color.ui-state-disabled:active, .btn-award_reason_2_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_2_bg_color[disabled], .btn-award_reason_2_bg_color[disabled]:hover, .btn-award_reason_2_bg_color[disabled]:focus, .btn-award_reason_2_bg_color[disabled]:active, .btn-award_reason_2_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_2_bg_color, fieldset[disabled] .btn-award_reason_2_bg_color:hover, fieldset[disabled] .btn-award_reason_2_bg_color:focus, fieldset[disabled] .btn-award_reason_2_bg_color:active, fieldset[disabled] .btn-award_reason_2_bg_color.ui-state-active {
+    background-color: #e71b26;
+    border-color: #e71b26; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_2_color {
+  color: #e71b26; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_2_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_2_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_2_border_color {
+  border-color: #e71b26; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_3_bg_color {
+  background: #009865; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_3_bg_color {
+  color: white;
+  background-color: #009865;
+  border-color: #009865; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_3_bg_color:hover, .btn-award_reason_3_bg_color:focus, .btn-award_reason_3_bg_color:active, .btn-award_reason_3_bg_color.ui-state-active {
+    color: white;
+    background-color: #006543;
+    border-color: #005b3c;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_3_bg_color:active, .btn-award_reason_3_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_3_bg_color.ui-state-disabled, .btn-award_reason_3_bg_color.ui-state-disabled:hover, .btn-award_reason_3_bg_color.ui-state-disabled:focus, .btn-award_reason_3_bg_color.ui-state-disabled:active, .btn-award_reason_3_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_3_bg_color[disabled], .btn-award_reason_3_bg_color[disabled]:hover, .btn-award_reason_3_bg_color[disabled]:focus, .btn-award_reason_3_bg_color[disabled]:active, .btn-award_reason_3_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_3_bg_color, fieldset[disabled] .btn-award_reason_3_bg_color:hover, fieldset[disabled] .btn-award_reason_3_bg_color:focus, fieldset[disabled] .btn-award_reason_3_bg_color:active, fieldset[disabled] .btn-award_reason_3_bg_color.ui-state-active {
+    background-color: #009865;
+    border-color: #009865; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_3_color {
+  color: #009865; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_3_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_3_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_3_border_color {
+  border-color: #009865; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_4_bg_color {
+  background: #589bd0; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_4_bg_color {
+  color: white;
+  background-color: #589bd0;
+  border-color: #589bd0; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_4_bg_color:hover, .btn-award_reason_4_bg_color:focus, .btn-award_reason_4_bg_color:active, .btn-award_reason_4_bg_color.ui-state-active {
+    color: white;
+    background-color: #3683bf;
+    border-color: #347db7;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_4_bg_color:active, .btn-award_reason_4_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_4_bg_color.ui-state-disabled, .btn-award_reason_4_bg_color.ui-state-disabled:hover, .btn-award_reason_4_bg_color.ui-state-disabled:focus, .btn-award_reason_4_bg_color.ui-state-disabled:active, .btn-award_reason_4_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_4_bg_color[disabled], .btn-award_reason_4_bg_color[disabled]:hover, .btn-award_reason_4_bg_color[disabled]:focus, .btn-award_reason_4_bg_color[disabled]:active, .btn-award_reason_4_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_4_bg_color, fieldset[disabled] .btn-award_reason_4_bg_color:hover, fieldset[disabled] .btn-award_reason_4_bg_color:focus, fieldset[disabled] .btn-award_reason_4_bg_color:active, fieldset[disabled] .btn-award_reason_4_bg_color.ui-state-active {
+    background-color: #589bd0;
+    border-color: #589bd0; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_4_color {
+  color: #589bd0; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_4_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_4_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_4_border_color {
+  border-color: #589bd0; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_5_bg_color {
+  background: #f18d13; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_5_bg_color {
+  color: white;
+  background-color: #f18d13;
+  border-color: #f18d13; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_5_bg_color:hover, .btn-award_reason_5_bg_color:focus, .btn-award_reason_5_bg_color:active, .btn-award_reason_5_bg_color.ui-state-active {
+    color: white;
+    background-color: #c5720c;
+    border-color: #bc6c0b;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_5_bg_color:active, .btn-award_reason_5_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_5_bg_color.ui-state-disabled, .btn-award_reason_5_bg_color.ui-state-disabled:hover, .btn-award_reason_5_bg_color.ui-state-disabled:focus, .btn-award_reason_5_bg_color.ui-state-disabled:active, .btn-award_reason_5_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_5_bg_color[disabled], .btn-award_reason_5_bg_color[disabled]:hover, .btn-award_reason_5_bg_color[disabled]:focus, .btn-award_reason_5_bg_color[disabled]:active, .btn-award_reason_5_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_5_bg_color, fieldset[disabled] .btn-award_reason_5_bg_color:hover, fieldset[disabled] .btn-award_reason_5_bg_color:focus, fieldset[disabled] .btn-award_reason_5_bg_color:active, fieldset[disabled] .btn-award_reason_5_bg_color.ui-state-active {
+    background-color: #f18d13;
+    border-color: #f18d13; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_5_color {
+  color: #f18d13; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_5_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_5_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_5_border_color {
+  border-color: #f18d13; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_6_bg_color {
+  background: #b9114f; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_6_bg_color {
+  color: white;
+  background-color: #b9114f;
+  border-color: #b9114f; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_6_bg_color:hover, .btn-award_reason_6_bg_color:focus, .btn-award_reason_6_bg_color:active, .btn-award_reason_6_bg_color.ui-state-active {
+    color: white;
+    background-color: #8a0d3b;
+    border-color: #810c37;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_6_bg_color:active, .btn-award_reason_6_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_6_bg_color.ui-state-disabled, .btn-award_reason_6_bg_color.ui-state-disabled:hover, .btn-award_reason_6_bg_color.ui-state-disabled:focus, .btn-award_reason_6_bg_color.ui-state-disabled:active, .btn-award_reason_6_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_6_bg_color[disabled], .btn-award_reason_6_bg_color[disabled]:hover, .btn-award_reason_6_bg_color[disabled]:focus, .btn-award_reason_6_bg_color[disabled]:active, .btn-award_reason_6_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_6_bg_color, fieldset[disabled] .btn-award_reason_6_bg_color:hover, fieldset[disabled] .btn-award_reason_6_bg_color:focus, fieldset[disabled] .btn-award_reason_6_bg_color:active, fieldset[disabled] .btn-award_reason_6_bg_color.ui-state-active {
+    background-color: #b9114f;
+    border-color: #b9114f; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_6_color {
+  color: #b9114f; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_6_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_6_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_6_border_color {
+  border-color: #b9114f; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_7_bg_color {
+  background: #6b7ded; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_7_bg_color {
+  color: white;
+  background-color: #6b7ded;
+  border-color: #6b7ded; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_7_bg_color:hover, .btn-award_reason_7_bg_color:focus, .btn-award_reason_7_bg_color:active, .btn-award_reason_7_bg_color.ui-state-active {
+    color: white;
+    background-color: #3e55e7;
+    border-color: #344de6;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_7_bg_color:active, .btn-award_reason_7_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_7_bg_color.ui-state-disabled, .btn-award_reason_7_bg_color.ui-state-disabled:hover, .btn-award_reason_7_bg_color.ui-state-disabled:focus, .btn-award_reason_7_bg_color.ui-state-disabled:active, .btn-award_reason_7_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_7_bg_color[disabled], .btn-award_reason_7_bg_color[disabled]:hover, .btn-award_reason_7_bg_color[disabled]:focus, .btn-award_reason_7_bg_color[disabled]:active, .btn-award_reason_7_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_7_bg_color, fieldset[disabled] .btn-award_reason_7_bg_color:hover, fieldset[disabled] .btn-award_reason_7_bg_color:focus, fieldset[disabled] .btn-award_reason_7_bg_color:active, fieldset[disabled] .btn-award_reason_7_bg_color.ui-state-active {
+    background-color: #6b7ded;
+    border-color: #6b7ded; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_7_color {
+  color: #6b7ded; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_7_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_7_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_7_border_color {
+  border-color: #6b7ded; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_8_bg_color {
+  background: #f3525a; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_8_bg_color {
+  color: white;
+  background-color: #f3525a;
+  border-color: #f3525a; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_8_bg_color:hover, .btn-award_reason_8_bg_color:focus, .btn-award_reason_8_bg_color:active, .btn-award_reason_8_bg_color.ui-state-active {
+    color: white;
+    background-color: #f0222d;
+    border-color: #ef1923;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_8_bg_color:active, .btn-award_reason_8_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_8_bg_color.ui-state-disabled, .btn-award_reason_8_bg_color.ui-state-disabled:hover, .btn-award_reason_8_bg_color.ui-state-disabled:focus, .btn-award_reason_8_bg_color.ui-state-disabled:active, .btn-award_reason_8_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_8_bg_color[disabled], .btn-award_reason_8_bg_color[disabled]:hover, .btn-award_reason_8_bg_color[disabled]:focus, .btn-award_reason_8_bg_color[disabled]:active, .btn-award_reason_8_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_8_bg_color, fieldset[disabled] .btn-award_reason_8_bg_color:hover, fieldset[disabled] .btn-award_reason_8_bg_color:focus, fieldset[disabled] .btn-award_reason_8_bg_color:active, fieldset[disabled] .btn-award_reason_8_bg_color.ui-state-active {
+    background-color: #f3525a;
+    border-color: #f3525a; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_8_color {
+  color: #f3525a; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_8_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_8_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_8_border_color {
+  border-color: #f3525a; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_9_bg_color {
+  background: #510c9a; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_9_bg_color {
+  color: white;
+  background-color: #510c9a;
+  border-color: #510c9a; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_9_bg_color:hover, .btn-award_reason_9_bg_color:focus, .btn-award_reason_9_bg_color:active, .btn-award_reason_9_bg_color.ui-state-active {
+    color: white;
+    background-color: #38086b;
+    border-color: #330861;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_9_bg_color:active, .btn-award_reason_9_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_9_bg_color.ui-state-disabled, .btn-award_reason_9_bg_color.ui-state-disabled:hover, .btn-award_reason_9_bg_color.ui-state-disabled:focus, .btn-award_reason_9_bg_color.ui-state-disabled:active, .btn-award_reason_9_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_9_bg_color[disabled], .btn-award_reason_9_bg_color[disabled]:hover, .btn-award_reason_9_bg_color[disabled]:focus, .btn-award_reason_9_bg_color[disabled]:active, .btn-award_reason_9_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_9_bg_color, fieldset[disabled] .btn-award_reason_9_bg_color:hover, fieldset[disabled] .btn-award_reason_9_bg_color:focus, fieldset[disabled] .btn-award_reason_9_bg_color:active, fieldset[disabled] .btn-award_reason_9_bg_color.ui-state-active {
+    background-color: #510c9a;
+    border-color: #510c9a; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_9_color {
+  color: #510c9a; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_9_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_9_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_9_border_color {
+  border-color: #510c9a; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_10_bg_color {
+  background: #aba32b; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_10_bg_color {
+  color: white;
+  background-color: #aba32b;
+  border-color: #aba32b; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_10_bg_color:hover, .btn-award_reason_10_bg_color:focus, .btn-award_reason_10_bg_color:active, .btn-award_reason_10_bg_color.ui-state-active {
+    color: white;
+    background-color: #827c21;
+    border-color: #7a741f;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_10_bg_color:active, .btn-award_reason_10_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_10_bg_color.ui-state-disabled, .btn-award_reason_10_bg_color.ui-state-disabled:hover, .btn-award_reason_10_bg_color.ui-state-disabled:focus, .btn-award_reason_10_bg_color.ui-state-disabled:active, .btn-award_reason_10_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_10_bg_color[disabled], .btn-award_reason_10_bg_color[disabled]:hover, .btn-award_reason_10_bg_color[disabled]:focus, .btn-award_reason_10_bg_color[disabled]:active, .btn-award_reason_10_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_10_bg_color, fieldset[disabled] .btn-award_reason_10_bg_color:hover, fieldset[disabled] .btn-award_reason_10_bg_color:focus, fieldset[disabled] .btn-award_reason_10_bg_color:active, fieldset[disabled] .btn-award_reason_10_bg_color.ui-state-active {
+    background-color: #aba32b;
+    border-color: #aba32b; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_10_color {
+  color: #aba32b; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_10_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_10_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_10_border_color {
+  border-color: #aba32b; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_11_bg_color {
+  background: #a230c7; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_11_bg_color {
+  color: white;
+  background-color: #a230c7;
+  border-color: #a230c7; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_11_bg_color:hover, .btn-award_reason_11_bg_color:focus, .btn-award_reason_11_bg_color:active, .btn-award_reason_11_bg_color.ui-state-active {
+    color: white;
+    background-color: #81269e;
+    border-color: #7a2496;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_11_bg_color:active, .btn-award_reason_11_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_11_bg_color.ui-state-disabled, .btn-award_reason_11_bg_color.ui-state-disabled:hover, .btn-award_reason_11_bg_color.ui-state-disabled:focus, .btn-award_reason_11_bg_color.ui-state-disabled:active, .btn-award_reason_11_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_11_bg_color[disabled], .btn-award_reason_11_bg_color[disabled]:hover, .btn-award_reason_11_bg_color[disabled]:focus, .btn-award_reason_11_bg_color[disabled]:active, .btn-award_reason_11_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_11_bg_color, fieldset[disabled] .btn-award_reason_11_bg_color:hover, fieldset[disabled] .btn-award_reason_11_bg_color:focus, fieldset[disabled] .btn-award_reason_11_bg_color:active, fieldset[disabled] .btn-award_reason_11_bg_color.ui-state-active {
+    background-color: #a230c7;
+    border-color: #a230c7; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_11_color {
+  color: #a230c7; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_11_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_11_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_11_border_color {
+  border-color: #a230c7; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_12_bg_color {
+  background: #a23111; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_12_bg_color {
+  color: white;
+  background-color: #a23111;
+  border-color: #a23111; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_12_bg_color:hover, .btn-award_reason_12_bg_color:focus, .btn-award_reason_12_bg_color:active, .btn-award_reason_12_bg_color.ui-state-active {
+    color: white;
+    background-color: #74230c;
+    border-color: #6b200b;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_12_bg_color:active, .btn-award_reason_12_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_12_bg_color.ui-state-disabled, .btn-award_reason_12_bg_color.ui-state-disabled:hover, .btn-award_reason_12_bg_color.ui-state-disabled:focus, .btn-award_reason_12_bg_color.ui-state-disabled:active, .btn-award_reason_12_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_12_bg_color[disabled], .btn-award_reason_12_bg_color[disabled]:hover, .btn-award_reason_12_bg_color[disabled]:focus, .btn-award_reason_12_bg_color[disabled]:active, .btn-award_reason_12_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_12_bg_color, fieldset[disabled] .btn-award_reason_12_bg_color:hover, fieldset[disabled] .btn-award_reason_12_bg_color:focus, fieldset[disabled] .btn-award_reason_12_bg_color:active, fieldset[disabled] .btn-award_reason_12_bg_color.ui-state-active {
+    background-color: #a23111;
+    border-color: #a23111; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_12_color {
+  color: #a23111; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_12_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_12_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_12_border_color {
+  border-color: #a23111; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_13_bg_color {
+  background: #a66666; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_13_bg_color {
+  color: white;
+  background-color: #a66666;
+  border-color: #a66666; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_13_bg_color:hover, .btn-award_reason_13_bg_color:focus, .btn-award_reason_13_bg_color:active, .btn-award_reason_13_bg_color.ui-state-active {
+    color: white;
+    background-color: #895050;
+    border-color: #834c4c;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_13_bg_color:active, .btn-award_reason_13_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_13_bg_color.ui-state-disabled, .btn-award_reason_13_bg_color.ui-state-disabled:hover, .btn-award_reason_13_bg_color.ui-state-disabled:focus, .btn-award_reason_13_bg_color.ui-state-disabled:active, .btn-award_reason_13_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_13_bg_color[disabled], .btn-award_reason_13_bg_color[disabled]:hover, .btn-award_reason_13_bg_color[disabled]:focus, .btn-award_reason_13_bg_color[disabled]:active, .btn-award_reason_13_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_13_bg_color, fieldset[disabled] .btn-award_reason_13_bg_color:hover, fieldset[disabled] .btn-award_reason_13_bg_color:focus, fieldset[disabled] .btn-award_reason_13_bg_color:active, fieldset[disabled] .btn-award_reason_13_bg_color.ui-state-active {
+    background-color: #a66666;
+    border-color: #a66666; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_13_color {
+  color: #a66666; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_13_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_13_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_13_border_color {
+  border-color: #a66666; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_14_bg_color {
+  background: #a42563; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_14_bg_color {
+  color: white;
+  background-color: #a42563;
+  border-color: #a42563; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_14_bg_color:hover, .btn-award_reason_14_bg_color:focus, .btn-award_reason_14_bg_color:active, .btn-award_reason_14_bg_color.ui-state-active {
+    color: white;
+    background-color: #7a1c4a;
+    border-color: #721a45;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_14_bg_color:active, .btn-award_reason_14_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_14_bg_color.ui-state-disabled, .btn-award_reason_14_bg_color.ui-state-disabled:hover, .btn-award_reason_14_bg_color.ui-state-disabled:focus, .btn-award_reason_14_bg_color.ui-state-disabled:active, .btn-award_reason_14_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_14_bg_color[disabled], .btn-award_reason_14_bg_color[disabled]:hover, .btn-award_reason_14_bg_color[disabled]:focus, .btn-award_reason_14_bg_color[disabled]:active, .btn-award_reason_14_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_14_bg_color, fieldset[disabled] .btn-award_reason_14_bg_color:hover, fieldset[disabled] .btn-award_reason_14_bg_color:focus, fieldset[disabled] .btn-award_reason_14_bg_color:active, fieldset[disabled] .btn-award_reason_14_bg_color.ui-state-active {
+    background-color: #a42563;
+    border-color: #a42563; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_14_color {
+  color: #a42563; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_14_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_14_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_14_border_color {
+  border-color: #a42563; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_15_bg_color {
+  background: #934231; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_15_bg_color {
+  color: white;
+  background-color: #934231;
+  border-color: #934231; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_15_bg_color:hover, .btn-award_reason_15_bg_color:focus, .btn-award_reason_15_bg_color:active, .btn-award_reason_15_bg_color.ui-state-active {
+    color: white;
+    background-color: #6d3124;
+    border-color: #652d22;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_15_bg_color:active, .btn-award_reason_15_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_15_bg_color.ui-state-disabled, .btn-award_reason_15_bg_color.ui-state-disabled:hover, .btn-award_reason_15_bg_color.ui-state-disabled:focus, .btn-award_reason_15_bg_color.ui-state-disabled:active, .btn-award_reason_15_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_15_bg_color[disabled], .btn-award_reason_15_bg_color[disabled]:hover, .btn-award_reason_15_bg_color[disabled]:focus, .btn-award_reason_15_bg_color[disabled]:active, .btn-award_reason_15_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_15_bg_color, fieldset[disabled] .btn-award_reason_15_bg_color:hover, fieldset[disabled] .btn-award_reason_15_bg_color:focus, fieldset[disabled] .btn-award_reason_15_bg_color:active, fieldset[disabled] .btn-award_reason_15_bg_color.ui-state-active {
+    background-color: #934231;
+    border-color: #934231; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_15_color {
+  color: #934231; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_15_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_15_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_15_border_color {
+  border-color: #934231; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_16_bg_color {
+  background: #382924; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_16_bg_color {
+  color: white;
+  background-color: #382924;
+  border-color: #382924; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_16_bg_color:hover, .btn-award_reason_16_bg_color:focus, .btn-award_reason_16_bg_color:active, .btn-award_reason_16_bg_color.ui-state-active {
+    color: white;
+    background-color: #191210;
+    border-color: #130e0c;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_16_bg_color:active, .btn-award_reason_16_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_16_bg_color.ui-state-disabled, .btn-award_reason_16_bg_color.ui-state-disabled:hover, .btn-award_reason_16_bg_color.ui-state-disabled:focus, .btn-award_reason_16_bg_color.ui-state-disabled:active, .btn-award_reason_16_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_16_bg_color[disabled], .btn-award_reason_16_bg_color[disabled]:hover, .btn-award_reason_16_bg_color[disabled]:focus, .btn-award_reason_16_bg_color[disabled]:active, .btn-award_reason_16_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_16_bg_color, fieldset[disabled] .btn-award_reason_16_bg_color:hover, fieldset[disabled] .btn-award_reason_16_bg_color:focus, fieldset[disabled] .btn-award_reason_16_bg_color:active, fieldset[disabled] .btn-award_reason_16_bg_color.ui-state-active {
+    background-color: #382924;
+    border-color: #382924; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_16_color {
+  color: #382924; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_16_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_16_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_16_border_color {
+  border-color: #382924; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_17_bg_color {
+  background: #b92312; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_17_bg_color {
+  color: white;
+  background-color: #b92312;
+  border-color: #b92312; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_17_bg_color:hover, .btn-award_reason_17_bg_color:focus, .btn-award_reason_17_bg_color:active, .btn-award_reason_17_bg_color.ui-state-active {
+    color: white;
+    background-color: #8b1a0d;
+    border-color: #81180d;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_17_bg_color:active, .btn-award_reason_17_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_17_bg_color.ui-state-disabled, .btn-award_reason_17_bg_color.ui-state-disabled:hover, .btn-award_reason_17_bg_color.ui-state-disabled:focus, .btn-award_reason_17_bg_color.ui-state-disabled:active, .btn-award_reason_17_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_17_bg_color[disabled], .btn-award_reason_17_bg_color[disabled]:hover, .btn-award_reason_17_bg_color[disabled]:focus, .btn-award_reason_17_bg_color[disabled]:active, .btn-award_reason_17_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_17_bg_color, fieldset[disabled] .btn-award_reason_17_bg_color:hover, fieldset[disabled] .btn-award_reason_17_bg_color:focus, fieldset[disabled] .btn-award_reason_17_bg_color:active, fieldset[disabled] .btn-award_reason_17_bg_color.ui-state-active {
+    background-color: #b92312;
+    border-color: #b92312; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_17_color {
+  color: #b92312; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_17_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_17_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_17_border_color {
+  border-color: #b92312; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_18_bg_color {
+  background: #231412; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_18_bg_color {
+  color: white;
+  background-color: #231412;
+  border-color: #231412; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_18_bg_color:hover, .btn-award_reason_18_bg_color:focus, .btn-award_reason_18_bg_color:active, .btn-award_reason_18_bg_color.ui-state-active {
+    color: white;
+    background-color: #010101;
+    border-color: black;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_18_bg_color:active, .btn-award_reason_18_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_18_bg_color.ui-state-disabled, .btn-award_reason_18_bg_color.ui-state-disabled:hover, .btn-award_reason_18_bg_color.ui-state-disabled:focus, .btn-award_reason_18_bg_color.ui-state-disabled:active, .btn-award_reason_18_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_18_bg_color[disabled], .btn-award_reason_18_bg_color[disabled]:hover, .btn-award_reason_18_bg_color[disabled]:focus, .btn-award_reason_18_bg_color[disabled]:active, .btn-award_reason_18_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_18_bg_color, fieldset[disabled] .btn-award_reason_18_bg_color:hover, fieldset[disabled] .btn-award_reason_18_bg_color:focus, fieldset[disabled] .btn-award_reason_18_bg_color:active, fieldset[disabled] .btn-award_reason_18_bg_color.ui-state-active {
+    background-color: #231412;
+    border-color: #231412; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_18_color {
+  color: #231412; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_18_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_18_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_18_border_color {
+  border-color: #231412; }
+
+/* line 30, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_19_bg_color {
+  background: #124124; }
+
+/* line 33, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.btn-award_reason_19_bg_color {
+  color: white;
+  background-color: #124124;
+  border-color: #124124; }
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_19_bg_color:hover, .btn-award_reason_19_bg_color:focus, .btn-award_reason_19_bg_color:active, .btn-award_reason_19_bg_color.ui-state-active {
+    color: white;
+    background-color: #07190e;
+    border-color: #051109;
+    -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  /* line 22, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_19_bg_color:active, .btn-award_reason_19_bg_color.ui-state-active {
+    background-image: none; }
+  /* line 32, ../../../../../../../var/www/html/t_static/global/sass/mixins/_buttons.scss */
+  .btn-award_reason_19_bg_color.ui-state-disabled, .btn-award_reason_19_bg_color.ui-state-disabled:hover, .btn-award_reason_19_bg_color.ui-state-disabled:focus, .btn-award_reason_19_bg_color.ui-state-disabled:active, .btn-award_reason_19_bg_color.ui-state-disabled.ui-state-active, .btn-award_reason_19_bg_color[disabled], .btn-award_reason_19_bg_color[disabled]:hover, .btn-award_reason_19_bg_color[disabled]:focus, .btn-award_reason_19_bg_color[disabled]:active, .btn-award_reason_19_bg_color[disabled].ui-state-active, fieldset[disabled] .btn-award_reason_19_bg_color, fieldset[disabled] .btn-award_reason_19_bg_color:hover, fieldset[disabled] .btn-award_reason_19_bg_color:focus, fieldset[disabled] .btn-award_reason_19_bg_color:active, fieldset[disabled] .btn-award_reason_19_bg_color.ui-state-active {
+    background-color: #124124;
+    border-color: #124124; }
+
+/* line 36, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_19_color {
+  color: #124124; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_19_bg_image {
+  background-image: url("/t_static/clients/recipientbased/images/award_reasons/award_reason_19_bg_image.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* line 44, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_award-reasons.scss */
+.award_reason_19_border_color {
+  border-color: #124124; }
+
+@-webkit-keyframes bounceIn {
+  /* line 2, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3); }
+
+  /* line 8, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  /* line 2, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3); }
+
+  /* line 8, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+
+@-ms-keyframes bounceIn {
+  /* line 2, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3); }
+
+  /* line 8, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  /* line 2, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3); }
+
+  /* line 8, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes bounceIn {
+  /* line 2, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3); }
+
+  /* line 8, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+
+  /* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+
+  /* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/bouncing-entrances/_bounceIn.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+
+/* line 11, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-transition {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/* line 17, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-no-transition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  transition: none !important; }
+
+/* line 23, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-transition-fadeInScale {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0; }
+
+/* line 31, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-transition-fadeInScale.show {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
+
+/* line 39, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-transition-fadeIn {
+  opacity: 0; }
+
+/* line 43, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/animations/_effects.scss */
+.gf-transition-fadeIn.show {
+  opacity: 1; }
+
+/**
+ * Hacks
+ *
+ * Page specific or global ie hacks which will be removed when we will stop supporting old ie versions
+ * plz use .ie7-hack; .ie8-hack etc classes for your hacks 
+ */
+/* line 9, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.has-layout {
+  *zoom: 1; }
+
+/* line 12, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.award-lightbox-addcongratulation textarea.ie7-hack {
+  *width: 496px; }
+
+/* line 13, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.unselected .award-lightbox-addcongratulation textarea.ie7-hack {
+  *height: 20px; }
+
+/* line 14, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.unselected .award-lightbox-addcongratulation textarea.ie7-hack.commentTextarea-help {
+  *height: 0; }
+
+/*for expandale textarea*/
+/* line 16, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.userpic-disabled .award-lightbox-addcongratulation textarea.ie7-hack {
+  *width: 578px; }
+
+/* line 19, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.btn-primary, .yui-skin-sam .buttonStyle1 .yui-button button,
+.yui-skin-sam .buttonStyle2 .yui-button button,
+.yui-skin-sam .buttonStyle1 .yui-button a,
+.yui-skin-sam .buttonStyle2 .yui-button a,
+.yui-skin-sam .buttonStyle1 input,
+.yui-skin-sam .buttonStyle2 input {
+  *min-width: auto; }
+
+/* line 27, ../../../../../../../var/www/html/t_static/global/sass/tr2-styles/_shame.scss */
+.yui-skin-sam .buttonStyle1 .yui-button button,
+.yui-skin-sam .buttonStyle2 .yui-button button,
+.yui-skin-sam .buttonStyle1 .yui-button a,
+.yui-skin-sam .buttonStyle2 .yui-button a,
+.yui-skin-sam .buttonStyle1 input,
+.yui-skin-sam .buttonStyle2 input {
+  min-height: auto;
+  *width: auto;
+  *overflow: visible; }
+
+/* for update used YUI and tr-styles classes used in old jsps to look like new tr2-styles */

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>canjs</title>
+  </head>
+  <body>
+    <div id="out"></div>
+
+    <script id="app" type="text/stache">
+      <form>
+        Meetup Name: <input can-value="value" />
+        {{#if saving}}Saving...{{/if}}
+      </form>
+
+      {{#if promtSave}}
+        <my-modal title="Wanna save?">
+          <p>Do you want to save?</p>
+          <button can-click="save">Yes</button>
+          <button can-click="cancel">No</button>
+        </my-modal>
+      {{/if}}
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../canjs-2.3.28/can.jquery.js"></script>
+    <script src="../canjs-2.3.28/can.stache.js"></script>
+    <script>
+      can.Component.extend({
+        tag: 'my-modal',
+        template: can.mustache(
+          "<div>" +
+          "<h1>{{title}}</h1>" +
+          "<content></content>" +
+          "</div>"
+        ),
+        scope: {
+          title: "@"
+        }
+      });
+
+      var State = can.Map.extend({
+        init: function() {
+          this.attr('backup', this.attr('value'));
+        },
+        promtSave: function() {
+          return !this.attr('saving') && this.attr('backup') !== this.attr('value');
+        },
+        save: function() {
+          var self = this;
+          this.attr('saving', true);
+          setTimeout(function() {
+            self.attr({
+              saving: false,
+              backup: self.attr('value')
+            })
+          }, 1000);
+
+        },
+        cancel: function() {
+          this.attr('saving', false);
+          this.attr('value', this.attr('backup'));
+        }
+      });
+
+      var state = new State({value: 'CanJS Chicago'});
+
+
+      $('#out').html(can.view('app', state));
+    </script>
+  </body>
+</html>

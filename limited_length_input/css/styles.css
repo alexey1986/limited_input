@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    overflow:hidden;
+    outline: 0;
+    line-height: 25px;
+    width: 100%;
+}
+.warning-class {
+    border-color: red;
+}
+.safe-class {
+    border-color: blue;
+}
+.empty-class {
+
+}
+.warning-count-class {
+    color: red;
+}
+.safe-count-class {
+    color: blue;
+}
+.empty-count-class {
+
+}
+
+.award-lightbox-addcongratulation.disabled {
+    background-color: #ccc;
+    color: #999;
+}
+
+.counter {
+    font-size: small;
+}

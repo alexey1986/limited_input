@@ -1,0 +1,23 @@
+<div>
+    <h3>Parent component</h3>
+    <limited-length-input customclass="margin-bottom-25 margin-top-5 border-radius-all award-lightbox-addcongratulation"
+        counter-class="counter"
+        placeholder="placeholder text..."
+        limit="500"
+        warning-class="warning-class"
+        safe-class="safe-class"
+        empty-class="empty-class"
+        warning-count-class="warning-count-class"
+        safe-count-class="safe-count-class"
+        empty-count-class="empty-count-class"
+        ></limited-length-input>
+     <div>
+        <input type="text" can-value="newText">
+        <button can-click="{getText}">Get Text</button>
+        <button can-click="{getState}">Get State</button>
+        <button {{#unless newText}}disabled{{/unless}} can-click="{setText}">Set Text</button>
+        <button can-click="{deactivate}">Deactivate</button>
+        <button can-click="{activate}">Activate</button>
+        <button can-click="{clear}">Clear</button>
+     </div>
+</div>

@@ -1,0 +1,87 @@
+/*define: {
+                limit: {
+                    value: function () {
+                        return parentScope.attr('limit');
+                    }
+                },
+                message: {
+                    set: function (newVal) {
+                        var state;
+                        if (!newVal.length) {
+                            state = STATE_EMPTY;
+                        } else if (newVal.length > this.attr('limit')) {
+                            state = STATE_WARN;
+                        } else {
+                            state = STATE_SAFE;
+                        }
+                        this.attr('state', state);
+                        return newVal
+                    },
+                    value: function () {
+                        return parentScope.attr('transmittedMessage') ? parentScope.attr('transmittedMessage') : '';
+                    }
+                },
+                state: {
+                    set: function (newValue) {
+                        return newValue;
+                    },
+                    value: STATE_EMPTY
+                },
+                isEditing: {
+                    set: function(newValue) {
+                        return newValue;
+                    },
+                    value: function () {
+                        return parentScope.attr('transmittedMessage') ? true : false;
+                    }
+                },
+                disabled: {
+                    value: function () {
+                        return parentScope.attr('disabled') ? true : false;
+                    }
+                },
+                emptyClass: {
+                    value: function () {
+                        return parentScope.attr('emptyClass');
+                    }
+                },
+                safeClass: {
+                    value: function () {
+                        return parentScope.attr('safeClass');
+                    }
+                },
+                warningClass: {
+                    value: function () {
+                        return parentScope.attr('warningClass');
+                    }
+                },
+                emptyCountClass: {
+                    value: function () {
+                        return parentScope.attr('emptyCountClass');
+                    }
+                },
+                safeCountClass: {
+                    value: function () {
+                        return parentScope.attr('safeCountClass');
+                    }
+                },
+                warningCountClass: {
+                    value: function () {
+                        return parentScope.attr('warningCountClass');
+                    }
+                }
+            },*/
+
+
+
+            //var config =  {
+            //    limit: 500,
+            //    transmittedMessage: '',
+            //    warningClass: 'warning-class',
+            //    safeClass: 'safe-class',
+            //    emptyClass: 'empty-class',
+            //    warningCountClass: 'warning-count-class',
+            //    safeCountClass: 'safe-count-class',
+            //    emptyCountClass: 'empty-count-class',
+            //    disabled: false
+            //};
