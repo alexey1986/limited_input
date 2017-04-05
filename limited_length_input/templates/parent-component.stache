@@ -4,6 +4,7 @@
         counter-class="counter"
         placeholder="placeholder text..."
         limit="500"
+        transmitted-message="some text"
         warning-class="warning-class"
         safe-class="safe-class"
         empty-class="empty-class"
@@ -13,7 +14,7 @@
         use-html-entity="false"
         options="{conf}"
         ></limited-length-input>
-     <div>
+    <div>
         <input type="text" can-value="newText">
         <button can-click="{getText}">Get Text</button>
         <button can-click="{getState}">Get State</button>
@@ -21,5 +22,6 @@
         <button can-click="{deactivate}">Deactivate</button>
         <button can-click="{activate}">Activate</button>
         <button can-click="{clear}">Clear</button>
-     </div>
+        <button can-click="{showOriginalText}">Show original text</button>
+    </div>
 </div>

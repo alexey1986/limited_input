@@ -10,9 +10,11 @@
         can-input="{textareaHandler @element @element.val}"
         value="{{message}}"
         {{#if disabled}}disabled{{/if}}></textarea>
-    {{#if isEditing}}
-    <div class="{{counterClass}} {{#is state 'STATE_EMPTY'}}{{emptyCountClass}}{{/is}}
-        {{#is state 'STATE_SAFE'}}{{safeCountClass}}{{/is}}
-        {{#is state 'STATE_WARN'}}{{warningCountClass}}{{/is}}">{{countLength}}</div>
+    {{#if limit}}
+        {{#if isEditing}}
+        <div class="{{counterClass}} {{#is state 'STATE_EMPTY'}}{{emptyCountClass}}{{/is}}
+            {{#is state 'STATE_SAFE'}}{{safeCountClass}}{{/is}}
+            {{#is state 'STATE_WARN'}}{{warningCountClass}}{{/is}}">{{countLength}}</div>
+        {{/if}}
     {{/if}}
 </div>

@@ -1,7 +1,29 @@
+/*
+ Limited length component allow to define textarea element and count element which will show the number of characters in the textarea.
+ You could also define a character limit (the number of characters which we can input in textfield). If not, textarea will show without
+ character counter.
+
+ Optionally you can set the classes which will be used in different states (emptyClass, emptyCountClass when text area is empty, etc)
+ if there is no some classes safeClass and safeCountClass will be used instead. Also you can set original text via transmittedMessage
+
+ You can define callback functions which will run when
+ lengthLimitExceeded - when you reach input limit
+ textDeleted - when you delete all the text from textarea
+ lengthLimitOkay - when the text length was 0 or >limit and becomes >0 and <limit
+ textInputed - on any text change
+ heightChanged - when textarea height change
+ deactivateTextArea - textarea disabled
+ activateTextArea - textarea enabled
+ clearTextArea - textarea value cleared
+ textAreaFocusIn - focus in
+ textAreaFocusOut - focus out
+*/
+
 (function () {
     var STATE_EMPTY = 'STATE_EMPTY';
     var STATE_SAFE = 'STATE_SAFE';
     var STATE_WARN = 'STATE_WARN';
+    var originalText;
 
     var limitedLengthInputViewModel = function (attrs, parentScope, element) {
         var vm = can.Map.extend({
@@ -87,22 +109,22 @@
                 },
                 // todo: temp
                 options: {
-                    value: function( val ) {
-                        return val
+                    value: function() {
+                        return attrs.options
                     }
                 }
             },
 
             countLength: function () {
-                //var textAreaValue = this.attr("message").length;
-                //var maxLength = this.attr("limit");
+                var textAreaValue = this.attr("message").length;
+                var maxLength = this.attr("limit");
                 //var textLength = useHtmlEntity ? GLOBOFORCE.escapeHtmlEntities(textAreaValue).length : textAreaValue.length;
                 //return maxLength - textLength;
-                return this.attr("limit") - this.attr("message").length;
+                return maxLength - textAreaValue;
             },
 
             textAreaFocusInHandler: function () {
-                //console.log(this.attr('options').limit);
+                console.log(this.attr('options'));
                 $(element).trigger('textAreaFocusIn');
                 if (this.attr('state') === STATE_EMPTY) {
                     return this.attr("isEditing", true);
@@ -130,18 +152,6 @@
             resizeInput: function () {
                 /*
                 var _debouncedObserver = GLOBOFORCE.debounce(function () {
-                    var input = $(element).find('textarea');
-                    var oldHeight = input.outerHeight();
-                    input.height('1px');
-                    input.height(input[0].scrollHeight);
-
-                    var newHeight = input.outerHeight();
-
-                    if (oldHeight != newHeight) {
-                        $(element).trigger('heightChanged');
-                    }
-                }, 50);
-                $(window).on('resize', _debouncedObserver);
                 */
                 setTimeout(function () {
                     var input = $(element).find('textarea');
@@ -155,10 +165,13 @@
                         $(element).trigger('heightChanged');
                     }
                 }, 0);
+                /*
+                }, 50);
+                $(window).on('resize', _debouncedObserver);
+                */
             },
 
             getText: function () {
-                console.log(this.attr('message'));
                 return this.attr('message');
             },
 
@@ -167,8 +180,15 @@
                 this.attr('message', text);
             },
 
+            showOriginalText: function () {
+                this.setText(originalText);
+            },
+
+            setOriginalText: function (newOriginalText) {
+                originalText = newOriginalText;
+            },
+
             getState: function () {
-                console.log(this.attr('state'));
                 return this.attr('state');
             },
 
@@ -205,6 +225,9 @@
         viewModel: limitedLengthInputViewModel,
         leakScope: false,
         events: {
+            init: function() {
+                originalText = this.viewModel.attr('message');
+            },
             inserted: function () {
                 this.viewModel.resizeInput();
             },
@@ -232,7 +255,5 @@
                 this.viewModel.resizeInput();
             }
         }
-
     });
-
 }());

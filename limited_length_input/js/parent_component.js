@@ -4,13 +4,18 @@
         template: can.view("./templates/parent-component.stache"),
         viewModel: {
             getText: function() {
-                can.viewModel('limited-length-input').getText();
+                var newVal = can.viewModel('limited-length-input').getText();
+                this.attr('newText', newVal);
             },
             getState: function() {
-                can.viewModel('limited-length-input').getState();
+                var state = can.viewModel('limited-length-input').getState();
+                console.log(state);
             },
             setText: function() {
                 can.viewModel('limited-length-input').setText(this.attr('newText'));
+            },
+            showOriginalText: function () {
+                can.viewModel('limited-length-input').showOriginalText();
             },
             deactivate: function() {
                 can.viewModel('limited-length-input').deactivate();
