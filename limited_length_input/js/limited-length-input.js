@@ -14,7 +14,9 @@
                 },
                 message: {
                     set: function (newVal) {
+                        //var textLength = this.attr('useHtmlEntity') ? GLOBOFORCE.escapeHtmlEntities(newVal).length : newVal.length;
                         var state;
+                        //if (!textLength) {
                         if (!newVal.length) {
                             state = STATE_EMPTY;
                         } else if (newVal.length > this.attr('limit')) {
@@ -75,16 +77,32 @@
                 },
                 warningCountClass: {
                     value: function () {
-                        return attrs.emptyCountClass;
+                        return attrs.warningCountClass;
+                    }
+                },
+                useHtmlEntity: {
+                    value: function () {
+                        return attrs.useHtmlEntity
+                    }
+                },
+                // todo: temp
+                options: {
+                    value: function( val ) {
+                        return val
                     }
                 }
             },
 
             countLength: function () {
+                //var textAreaValue = this.attr("message").length;
+                //var maxLength = this.attr("limit");
+                //var textLength = useHtmlEntity ? GLOBOFORCE.escapeHtmlEntities(textAreaValue).length : textAreaValue.length;
+                //return maxLength - textLength;
                 return this.attr("limit") - this.attr("message").length;
             },
 
             textAreaFocusInHandler: function () {
+                //console.log(this.attr('options').limit);
                 $(element).trigger('textAreaFocusIn');
                 if (this.attr('state') === STATE_EMPTY) {
                     return this.attr("isEditing", true);
@@ -100,8 +118,8 @@
 
             textareaHandler: function (element, value) {
                 if (value !== this.attr('message')) {
-                    //this.attr('message', value.trim());
-                    this.attr('message', value);
+                    this.attr('message', value.trim());
+                    //this.attr('message', value);
                     this.dispatch('stateChanged', [element]);
                 }
                 if (this.attr('state') !== STATE_EMPTY && value) {
@@ -110,6 +128,21 @@
             },
 
             resizeInput: function () {
+                /*
+                var _debouncedObserver = GLOBOFORCE.debounce(function () {
+                    var input = $(element).find('textarea');
+                    var oldHeight = input.outerHeight();
+                    input.height('1px');
+                    input.height(input[0].scrollHeight);
+
+                    var newHeight = input.outerHeight();
+
+                    if (oldHeight != newHeight) {
+                        $(element).trigger('heightChanged');
+                    }
+                }, 50);
+                $(window).on('resize', _debouncedObserver);
+                */
                 setTimeout(function () {
                     var input = $(element).find('textarea');
                     var oldHeight = input.outerHeight();

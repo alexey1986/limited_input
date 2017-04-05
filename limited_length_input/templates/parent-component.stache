@@ -10,6 +10,8 @@
         warning-count-class="warning-count-class"
         safe-count-class="safe-count-class"
         empty-count-class="empty-count-class"
+        use-html-entity="false"
+        options="{conf}"
         ></limited-length-input>
      <div>
         <input type="text" can-value="newText">
