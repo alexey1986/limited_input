@@ -1,22 +1,7 @@
 /*
  Limited length component allow to define textarea element and count element which will show the number of characters in the textarea.
  You could also define a character limit (the number of characters which we can input in textfield). If not, textarea will show without
- character counter.
-
- Optionally you can set the classes which will be used in different states (emptyClass, emptyCountClass when text area is empty, etc)
- if there is no some classes safeClass and safeCountClass will be used instead. Also you can set original text via transmittedMessage
-
- You can define callback functions which will run when
- lengthLimitExceeded - when you reach input limit
- textDeleted - when you delete all the text from textarea
- lengthLimitOkay - when the text length was 0 or >limit and becomes >0 and <limit
- textInputed - on any text change
- heightChanged - when textarea height change
- deactivateTextArea - textarea disabled
- activateTextArea - textarea enabled
- clearTextArea - textarea value cleared
- textAreaFocusIn - focus in
- textAreaFocusOut - focus out
+ character counter and without "WARNING" state.
 */
 
 (function () {
@@ -41,7 +26,7 @@
                         //if (!textLength) {
                         if (!newVal.length) {
                             state = STATE_EMPTY;
-                        } else if (newVal.length > this.attr('limit')) {
+                        } else if (this.attr('limit') && newVal.length > this.attr('limit')) {
                             state = STATE_WARN;
                         } else {
                             state = STATE_SAFE;
@@ -249,6 +234,8 @@
                     default:
                         break;
                 }
+
+                console.log(state)
             },
             '{window} resize': function () {
                 // To prevent resizing of the input just add fixed width via css
