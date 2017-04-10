@@ -25,9 +25,6 @@
             },
             clear: function() {
                 can.viewModel('limited-length-input').clear();
-            },
-            conf: {
-                limit: 200
             }
         },
         events: {

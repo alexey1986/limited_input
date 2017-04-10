@@ -1,12 +1,11 @@
-* {
+/* temp styles */
+/** {
     margin: 0;
     padding: 0;
 }
 textarea {
-    overflow:hidden;
     outline: 0;
     line-height: 25px;
-    width: 100%;
 }
 .warning-class {
     border-color: red;
@@ -34,4 +33,12 @@ textarea {
 
 .counter {
     font-size: small;
+}
+*/
+
+/* DEFAULT Styles */
+.super-input textarea {
+    overflow:hidden;
+    /*resize: none;*/
+    width: 100%;
 }

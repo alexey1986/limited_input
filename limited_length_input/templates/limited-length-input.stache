@@ -1,4 +1,4 @@
-<div class="{{customclass}}
+<div class="super-input {{customclass}}
     {{#if disabled}}disabled{{/if}}
     {{#is state 'STATE_EMPTY'}}{{emptyClass}}{{/is}}
     {{#is state 'STATE_SAFE'}}{{safeClass}}{{/is}}
